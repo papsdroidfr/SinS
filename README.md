@@ -52,7 +52,7 @@ S'il gagne: la led verte va clignoter 3 fois, le niveau est augmenté, et si le 
 ![confirmation](_docs/Ecran_04_niveau.png)
 
 S'il se trompe: une musique de la loose est jouée, la led rouge clignote 3 fois, et un message est indiqué sur l'écran. 
-Le jeux repars alors sur l'écran de choix du mode.
+Le jeux retourne alors sur l'écran de choix du mode.
 
 ![loose](_docs/Ecran_05_loose.png)
 

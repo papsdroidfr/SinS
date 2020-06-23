@@ -5,7 +5,7 @@ Jeux de mémoire SIMON à base d'une PYBStick26: une série de plus en plus long
 * 1 PYBStick26
 * 4 leds 5mm (Verte, Bleue, Jaune, Rouge)
 * 4 résistances 220 ohms (pour les leds)
-* 1 transistor npn
+* 1 transistor npn (TO92)
 * 1 résistance 1k ohms (pour le transistor)
 * 1 petit buzzer passif
 * 4 petits boutons poussoir 6mm

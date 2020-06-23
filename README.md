@@ -13,7 +13,7 @@ Jeux de mémoire SIMON à base d'une PYBStick26
 
 ## prototypage sur breadboard
 
-[_docs/SimonStick26_bb.png]
+![prototype breadbaord](docs/SimonStick26_bb.png)
 
 ## scipts micropython à installer sur la PYBStick
 dans le répertoire PYBFLASH qui s'affiche à l'odinateur lors du branchement de la PYBStick sur un port USB, déposez tous les * fichiers Micropython:

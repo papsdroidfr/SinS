@@ -43,9 +43,9 @@ Le mode choisi est confirmé sur l'écran LCD
 
 ![confirmation](_docs/Ecran_03_modeChoisi.png)
 
-Le joueur est alors invité à 
-1 observer la séquence de leds (avec ou sans son, selon le mode choisi) qui s'allument
-2 reproduire la même séquence à l'aide du rack de boutons poussoir
+Le joueur est alors invité à :
+* observer la séquence de leds (avec ou sans son, selon le mode choisi) qui s'allument
+* reproduire la même séquence à l'aide du rack de boutons poussoir
 
 S'il gagne: la led verte va clignoter 3 fois, le niveau est augmenté, et si le record du mode est battu il est aussi mis à jour.
 

@@ -34,7 +34,7 @@ Un message d'accueil avec musique apparait, ainsi qu'une petite animation color�
 Le joeur est alors invité à choisir un mode de jeux:
 * __Vert__ : facile, il s'agit du jeux SIMON classique où une séquence de leds de plus en plus longue avec son activé pour chaque couleur doit être devinée par le joeur
 * __Bleu__ : moyen, idem que le mode vert mais sans les sons
-* __Jaune__: difficile. Dans ce mode la séquence de leds est à chaque fois réinitialisée au hasard, avec les son activés.
+* __Jaune__: difficile. Dans ce mode la séquence de leds est à chaque fois réinitialisée au hasard, avec les sons activés.
 * __Rouge__: expert. Idem mode Jaune mais sans les sons.
 
 ![choix mode](_docs/Ecran_02_mode.png)

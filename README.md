@@ -15,7 +15,7 @@ Jeux de mémoire SIMON à base d'une PYBStick26: une série de plus en plus long
 
 ![prototype breadbaord](_docs/SimonStick26_bb.png)
 
-## scipts micropython à installer sur la PYBStick
+## scripts micropython à installer sur la PYBStick
 Dans le répertoire PYBFLASH qui s'affiche à l'odinateur lors du branchement de la PYBStick sur un port USB, déposez tous les fichiers Micropython ci-dessous:
 * buttons.py : gestion du rack de boutons poussoirs
 * buzzer.py  : gestion du buzzer

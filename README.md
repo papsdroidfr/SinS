@@ -1,9 +1,9 @@
-# LabyStick
-Jeux de mémoire visuelle et auditive à base d'une PYBStick26.
+# SinS
+Jeux de mémoire visuelle et auditive à base d'une PYBStick26,.
 
 Il faut retrouver les clés de 10 coffres à trésors cachés dans un immense labyrinthe.
 
-Dans chaque pièce où vous entrez, il y a 4 sorties de 4 couleurs distinctes. Vous avez un guide qui ouvre le chemin et vous montre les  3 prochaines portes à ouvrir pour trouver une première clé. Si vous réussisez, votre guide vous montre alors les 3 portes suivantes à ouvrir y compris les 3 premières déjà empruntées, et ainsi de suite... Le jeux se termine quand vous avez raporté les 10 clés, ou bien quand vous vous trompez et êtes perdu dans le labyrinthe.
+Dans chaque pièce où vous entrez, il y a 4 sorties de 4 couleurs distinctes. Vous avez un guide qui ouvre le chemin et vous montre les  3 prochaines portes à ouvrir pour trouver une première clé. Si vous réussissez, votre guide vous montre alors les 3 portes suivantes à ouvrir y compris les 3 premières déjà empruntées, et ainsi de suite... Le jeux se termine quand vous avez raporté les 10 clés, ou bien quand vous vous trompez et êtes perdu dans le labyrinthe.
 
 ## matériel nécessaire
 * 1 PYBStick26
@@ -17,10 +17,10 @@ Dans chaque pièce où vous entrez, il y a 4 sorties de 4 couleurs distinctes. V
 
 ## prototypage sur breadboard
 
-![prototype breadbaord](_docs/LabyStick26_bb.png)
+![prototype breadbaord](_docs/SinS_bb.png)
 
 ## scripts micropython à installer sur la PYBStick
-Dans le répertoire PYBFLASH qui s'affiche à l'odinateur lors du branchement de la PYBStick sur un port USB, déposez tous les fichiers Micropython ci-dessous:
+Dans le répertoire PYBFLASH qui s'affiche à l'ordinateur lors du branchement de la PYBStick26 sur un port USB, déposez tous les fichiers Micropython ci-dessous:
 * buttons.py : gestion du rack de boutons poussoirs
 * buzzer.py  : gestion du buzzer
 * lcd.py     : gestion du LCD
@@ -48,7 +48,7 @@ Le mode choisi est confirmé sur l'écran LCD
 ![confirmation](_docs/Ecran_03_modeChoisi.png)
 
 Le joueur est alors invité à :
-* observer la séquence de 3 portes (avec ou sans son, selon le mode choisi) à ouvrir, indiquée par notre guide
+* observer la séquence de 3 portes (avec ou sans son, selon le mode choisi) à ouvrir, indiquée par le guide
 * reproduire la même séquence à l'aide du rack de boutons poussoir
 
 S'il gagne: la led verte va clignoter 3 fois, une clé est trouvée, et si le record du mode est battu il est aussi mis à jour.
@@ -59,6 +59,8 @@ S'il se trompe, vous êtes perdu dans le labyrinthe de la PybStick! Une musique 
 
 ![loose](_docs/Ecran_05_loose.png)
 
+Si vous avez trouvé les 10 clés: bravo et respect !
+![bravo](_docs/Ecran_06_BRAVO.png)
 
 
 

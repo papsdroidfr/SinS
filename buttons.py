@@ -2,7 +2,7 @@
 #
 # Auteur : papsdroid - https://www.papsdroid.fr
 # Version: Juin 2020
-# Classe de gestion du rack de boutons du jeux SimonStick sur PYBStick26
+# Classe de gestion du rack de boutons du jeux LabyStick sur PYBStick26
 #
 ################################################################"
 

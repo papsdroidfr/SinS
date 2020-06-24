@@ -2,7 +2,7 @@
 #
 # Auteur : papsdroid - https://www.papsdroid.fr
 # Version: Juin 2020
-# Classe gestion du Buzzer du jeux SimonStick sur PYBStick26
+# Classe gestion du Buzzer du jeux LabyStick sur PYBStick26
 #
 ################################################################"
 
@@ -13,7 +13,7 @@ from time import sleep
 class Buzz():
     def __init__(self):
         """ constructeur, par défaut buzzerOn=False: non activé"""
-        self.level=30        # niveau sonnore 0 (off) à 100 (max)
+        self.level=25        # niveau sonnore 0 (off) à 100 (max)
         self.freq_lam7 = [440, 523, 659, 784] #les bluesman vont reconnaître un accord de Lam7
         self.dic_freq={ 'V': 440, # fréquence ledG = La
                         'B': 523, # fréquence ledB = Do

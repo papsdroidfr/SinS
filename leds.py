@@ -2,7 +2,7 @@
 #
 # Auteur : papsdroid - https://www.papsdroid.fr
 # Version: Juin 2020
-# classe gestion du rack de leds du jeux SimonStick, sur PYBStick26
+# classe gestion du rack de leds du jeux LabyStick, sur PYBStick26
 #
 #################################################################
 from pwm import *

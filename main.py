@@ -2,7 +2,7 @@
 #
 # Auteur : papsdroid - https://www.papsdroid.fr
 # Version: Juin 2020
-# script MicoPython principal du jeux SimonStick sur PYBStick26
+# script MicoPython principal du jeux LabyStick sur PYBStick26
 #
 ################################################################"
 
@@ -13,35 +13,34 @@ from buttons import RackButtons
 from random import randint
 import time, os
 
-class JeuxSimonStick():
-    """ classe du jeux de mémoire SimonStick """
+class JeuxStick():
+    """ classe gestion du jeux  """
     def __init__(self):
         """ constructeur """
-        print ('Démarrage jeux SimonStick ... ')
+        print ('Démarrage jeux ... ')
         self.lcd = Lcd()                # affichage LCD du jeux
+        self.lcd.write_char('robot_ok', pos=(0,0) )
+        self.lcd.msg_centre('LabyStick', 'Initialisation')
+        self.lcd.write_char('robot_ok', pos=(15,0) )
         self.buzzer=Buzz()              # buzzer du jeux
         self.rackleds=RackLeds()        # rack de leds
-        self.rackbuttons=RackButtons(self.rackleds, self.buzzer)  # rack de boutons de commande des leds
-        self.color = ['V','B','J','R']  # couleur du jeux, et dictionnaire du rang des leds dans le rack
+        self.rackbuttons=RackButtons(self.rackleds, self.buzzer)  # rack de boutons
+        self.color = ['V','B','J','R']  # couleur du jeux
         self.dic_color = {'V':0, 'B':1, 'J':2, 'R':3}
-        self.file_scores = '/flash/scores.txt' #fichier des records
-        self.scores = self.read_scores()       # dictionnaire des record {'V':nv, 'B',nb ,'J',nj, 'R',nr}
+        self.file_scores = '/flash/scores.txt' # fichier des records
+        self.scores = self.read_scores()       # dictionnaire des record
 
-        #mode de difficulté du jeux selon les couleurs
-        """ V: séquence de leds de plus en plus longue, avec musique activée
-            B: séquence de leds de plus en plus longue, sans musique
-            Y: séquence de leds réinitialisées et plus longue à chaque fois, avec musique
-            R: séquence de leds réinitialisées et plus longue à chaque tour, sans musique
-        """
+        #mode de difficulté du jeux
         self.dic_mode = {
             'V': ['Vert',  'Facile']    ,
             'B': ['Bleu',  'Moyen']     ,
             'J': ['Jaune', 'Difficile'] ,
             'R': ['Rouge', 'Expert']    , 
             }
-        self.mode = 'V'                     # difficulté  choisie ('V' par défaut)
+        self.mode = 'V'
 
-        self.niveau = 1           # niveau = nb de leds dans la séquence en cours
+        self.nb_portes=3              # nb de portes par niveau à ouvrir
+        self.niveau = self.nb_portes  # nb de leds dans la séquence en cours
         self.seq_led_droid = []   # sequence des couleurs à retenir
         self.seq_led_joueur = []  # séquence des couleurs du joueur
         self.continuer = True     # fin de partie: continuer=False
@@ -50,17 +49,22 @@ class JeuxSimonStick():
         """ réinitialise les séquences à vide"""
         self.seq_led_droid = []
         self.seq_led_joueur = []
-    
+
+    def add_seq(self):
+        """ ajoute une séquence de nb_portes aléatoires au jeux"""
+        for _ in range(self.nb_portes):
+            self.seq_led_droid.append(self.color[randint(0,3)])
+        
+            
     def nouvelle_seq(self):
         """ détermine la nouvelle séquence de couleurs à trouver"""
         self.seq_led_joueur = []    # remise à zéro de la séquence du joueur
-        if self.mode in ['J','R']:  # séquences totalement remaniées pour les modes 'J' et 'R'
+        if self.mode in ['J','R']:  # séquences aléatoires depuis le début
             self.seq_led_droid = []
-            for n in range(self.niveau):
-                self.seq_led_droid.append(self.color[randint(0,3)])
-        else:                       # sinon on ajoute juste une nouvelle couleur au hasard
-            self.seq_led_droid.append(self.color[randint(0,3)])   
-        #print('niveau:', self.niveau, 'sequence à trouver:', self.seq_led_droid)
+            for n in range(self.niveau//self.nb_portes):
+                self.add_seq()
+        else:  # sinon on ajoute nb_portes couleurs au hasard
+            self.add_seq()
     
     def add_sequence_joueur(self, color):
         """ ajoute la couleur jouée par le joueur"""
@@ -68,7 +72,7 @@ class JeuxSimonStick():
         
     def read_scores(self):
         """ retourne le dictionaires des records à battre par mode V,B,J,R"""
-        dic_scores = {'V':1, 'B':1, 'J':1, 'R':1} #scores par niveaux
+        dic_scores = {'V':0, 'B':0, 'J':0, 'R':0} #scores par niveaux
         try:
             with open(self.file_scores, 'r') as f:
                 for line in f.readlines():
@@ -88,19 +92,18 @@ class JeuxSimonStick():
             f.write('B:' + str(scores['B']) + '\n')
             f.write('J:' + str(scores['J']) + '\n')
             f.write('R:' + str(scores['R']) + '\n')
-        #print(os.listdir("/flash"))
-            
+    
     def loop(self):
         """ boucle principale du jeux"""
         while True :
-            # initialisations
-            self.init_seq()  # initialise les séquences à vide
-            self.niveau=1    # démarre au niveau 1
+            #initialisations
+            self.init_seq()            
+            self.niveau=self.nb_portes 
             self.lcd.clear()
             self.rackbuttons.desactivate_buzzer()
             self.lcd.msg_centre('Choix du mode', 'Quelle couleur ?' )
-
-            # choix du mode de jeux / difficulté: V(Facile,), B(moyen), J(difficile), R(expert)
+            
+            # choix du mode de jeux
             self.rackbuttons.pressed = False
             while not(self.rackbuttons.pressed): #attente appui sur un bouton du rack
                 time.sleep(0.2)
@@ -117,7 +120,10 @@ class JeuxSimonStick():
             while (continuer):
                 #création d'une nouvelle séquence à trouver
                 self.nouvelle_seq()    
-                self.lcd.msg('Niveau:'+str(self.niveau), 'Record:'+ str(self.scores[self.mode]))
+                #self.lcd.msg('Niveau:'+str(self.niveau), 'Record:'+ str(self.scores[self.mode]))
+                self.lcd.msg('Niveau:', 'Record:')
+                self.lcd.write_key(self.niveau//self.nb_portes, 0) # niveau
+                self.lcd.write_key(self.scores[self.mode], 1)      # record du mode joué
                 time.sleep(1)
                 #affichage de la séquence à trouver
                 for color in self.seq_led_droid:
@@ -144,10 +150,10 @@ class JeuxSimonStick():
                 if (self.seq_led_joueur == self.seq_led_droid):
                     #print('Bien joué! niveau suivant')
                     self.rackleds.win()   #animation gagné
-                    if (self.scores[self.mode]<self.niveau): # le record du mode est battu
-                        self.scores[self.mode]=self.niveau   # maj du dictionnaire des records
-                        self.write_scores(self.scores)       # enregistrement des records
-                    self.niveau += 1
+                    if (self.scores[self.mode] < self.niveau//self.nb_portes): # le record du mode est battu
+                        self.scores[self.mode]=self.niveau//self.nb_portes     # maj du dictionnaire des records
+                        self.write_scores(self.scores)          # enregistrement des records
+                    self.niveau += self.nb_portes
                 else:
                     #print('Perdu!')
                     self.lcd.clear()
@@ -159,9 +165,8 @@ class JeuxSimonStick():
                     time.sleep(1)
                     continuer = False
 
-
 #script du jeux
 #----------------------------------------------
-jeux=JeuxSimonStick()
+jeux=JeuxStick()
 jeux.loop()
 

@@ -17,7 +17,7 @@ Dans chaque pièce où vous entrez, il y a 4 sorties de 4 couleurs distinctes. V
 
 ## prototypage sur breadboard
 
-![prototype breadbaord](_docs/SimonStick26_bb.png)
+![prototype breadbaord](_docs/LabyStick26_bb.png)
 
 ## scripts micropython à installer sur la PYBStick
 Dans le répertoire PYBFLASH qui s'affiche à l'odinateur lors du branchement de la PYBStick sur un port USB, déposez tous les fichiers Micropython ci-dessous:

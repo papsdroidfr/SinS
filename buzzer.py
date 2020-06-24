@@ -2,7 +2,7 @@
 #
 # Auteur : papsdroid - https://www.papsdroid.fr
 # Version: Juin 2020
-# Classe gestion du Buzzer du jeux LabyStick sur PYBStick26
+# Classe gestion du Buzzer du jeux sins sur PYBStick26
 #
 ################################################################"
 

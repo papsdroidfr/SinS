@@ -2,7 +2,7 @@
 #
 # Auteur : papsdroid - https://www.papsdroid.fr
 # Version: Juin 2020
-# classe gestion du LCD du jeux LabyStick, sur PYBStick26
+# classe gestion du LCD du jeux sins sur PYBStick26
 #
 #################################################################
 

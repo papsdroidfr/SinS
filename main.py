@@ -2,7 +2,7 @@
 #
 # Auteur : papsdroid - https://www.papsdroid.fr
 # Version: Juin 2020
-# script MicoPython principal du jeux LabyStick sur PYBStick26
+# script MicoPython principal du jeux SinS sur PYBStick26
 #
 ################################################################"
 
@@ -13,14 +13,14 @@ from buttons import RackButtons
 from random import randint
 import time, os
 
-class JeuxStick():
+class Jeux_sins():
     """ classe gestion du jeux  """
     def __init__(self):
         """ constructeur """
         print ('Démarrage jeux ... ')
         self.lcd = Lcd()                # affichage LCD du jeux
         self.lcd.write_char('robot_ok', pos=(0,0) )
-        self.lcd.msg_centre('LabyStick', 'Initialisation')
+        self.lcd.msg_centre('SinS', 'Initialisation')
         self.lcd.write_char('robot_ok', pos=(15,0) )
         self.buzzer=Buzz()              # buzzer du jeux
         self.rackleds=RackLeds()        # rack de leds
@@ -28,7 +28,8 @@ class JeuxStick():
         self.color = ['V','B','J','R']  # couleur du jeux
         self.dic_color = {'V':0, 'B':1, 'J':2, 'R':3}
         self.file_scores = '/flash/scores.txt' # fichier des records
-        self.scores = self.read_scores()       # dictionnaire des record
+        self.scores = self.read_scores() # dictionnaire des record
+        self.total_keys=10               # nb_clés à trouver   
 
         #mode de difficulté du jeux
         self.dic_mode = {
@@ -153,7 +154,20 @@ class JeuxStick():
                     if (self.scores[self.mode] < self.niveau//self.nb_portes): # le record du mode est battu
                         self.scores[self.mode]=self.niveau//self.nb_portes     # maj du dictionnaire des records
                         self.write_scores(self.scores)          # enregistrement des records
-                    self.niveau += self.nb_portes
+                    if self.niveau == self.total_keys*self.nb_portes:
+                        # toutes les clés sont trouvées
+                        self.buzzer.welcome_sound()
+                        self.lcd.clear()
+                        self.lcd.msg_centre('BRAVO!')
+                        self.lcd.write_char('robot_ok', pos=(0,0) )
+                        self.lcd.write_char('robot_ok', pos=(15,0) )
+                        for n in range(10):
+                            self.lcd.write_char('key', pos=(3+n,1) )
+                            time.sleep(0.3)
+                        time.sleep(2)
+                        continuer = False
+                    else:
+                        self.niveau += self.nb_portes
                 else:
                     #print('Perdu!')
                     self.lcd.clear()
@@ -167,6 +181,6 @@ class JeuxStick():
 
 #script du jeux
 #----------------------------------------------
-jeux=JeuxStick()
+jeux=Jeux_sins()
 jeux.loop()
 

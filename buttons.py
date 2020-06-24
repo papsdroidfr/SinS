@@ -2,9 +2,9 @@
 #
 # Auteur : papsdroid - https://www.papsdroid.fr
 # Version: Juin 2020
-# Classe de gestion du rack de boutons du jeux LabyStick sur PYBStick26
+# Classe de gestion du rack de boutons du jeux sins sur PYBStick26
 #
-################################################################"
+#################################################################
 
 from machine import Pin
 from pyb import ExtInt

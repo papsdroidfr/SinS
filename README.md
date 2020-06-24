@@ -60,6 +60,7 @@ S'il se trompe, vous êtes perdu dans le labyrinthe de la PybStick! Une musique 
 ![loose](_docs/Ecran_05_loose.png)
 
 Si vous avez trouvé les 10 clés: bravo et respect !
+
 ![bravo](_docs/Ecran_06_BRAVO.png)
 
 

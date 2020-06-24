@@ -1,5 +1,5 @@
 # SinS
-Jeux de mémoire visuelle et auditive à base d'une PYBStick26,.
+Jeux de mémoire visuelle et auditive à base d'une PYBStick26.
 
 Il faut retrouver les clés de 10 coffres à trésors cachés dans un immense labyrinthe.
 

@@ -36,7 +36,7 @@ Un message d'accueil avec musique apparait, ainsi qu'une petite animation color�
 ![intro](_docs/Ecran_01_accueil.png)
 
 Le joueur est ensuite invité à choisir un mode de jeux:
-* __Vert__ : facile. De nouvelles séquence de 3 portes à ouvrir sont rajoutées sans modifier les précédents. Chaque porte est associée à un son.
+* __Vert__ : facile. De nouvelles séquences de 3 portes à ouvrir sont rajoutées sans modifier les précédentes. Chaque porte est associée à un son.
 * __Bleu__ : moyen, idem que le mode vert mais sans les sons
 * __Jaune__: difficile. Dans ce mode, la séquence de portes à ouvrir est réinitialisée au hasard depuis le début, avec les sons activés.
 * __Rouge__: expert. Idem mode Jaune mais sans les sons.

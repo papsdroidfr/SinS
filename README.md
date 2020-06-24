@@ -1,5 +1,9 @@
-# SimonStick
-Jeux de mémoire SIMON à base d'une PYBStick26: une série de plus en plus longue de couleurs (avec ou sans son) est générée et doit être reproduite à l'aide de boutons poussoirs.
+# LabyStick
+Jeux de mémoire visuelle et auditive à base d'une PYBStick26.
+
+Il faut retrouver les clés de 10 coffres à trésors cachés dans un immense labyrinthe.
+
+Dans chaque pièce où vous entrez, il y a 4 sorties de 4 couleurs distinctes. Vous avez un guide qui ouvre le chemin et vous montre les  3 prochaines portes à ouvrir pour trouver une première clé. Si vous réussisez, votre guide vous montre alors les 3 portes suivantes à ouvrir y compris les 3 premières déjà empruntées, et ainsi de suite... Le jeux se termine quand vous avez raporté les 10 clés, ou bien quand vous vous trompez et êtes perdu dans le labyrinthe.
 
 ## matériel nécessaire
 * 1 PYBStick26
@@ -22,7 +26,7 @@ Dans le répertoire PYBFLASH qui s'affiche à l'odinateur lors du branchement de
 * lcd.py     : gestion du LCD
 * lcd2ic.py  : conçu par [MC Hobby](https://github.com/mchobby/pyboard-driver/tree/master/PYBStick): gestion du LCD via I2C de la PYBStick
 * leds.py    : gestion du rack de leds
-* main.py    : script principal 
+* main.py    : script principaldu jeux
 * pwm.py     : conçu par [MC Hobby](https://github.com/mchobby/pyboard-driver/tree/master/PYBStick) : gestion des sorties PWM de la PYBStick
 
 
@@ -32,9 +36,9 @@ Un message d'accueil avec musique apparait, ainsi qu'une petite animation color�
 ![intro](_docs/Ecran_01_accueil.png)
 
 Le joueur est ensuite invité à choisir un mode de jeux:
-* __Vert__ : facile, il s'agit du jeux SIMON classique où une séquence de leds de plus en plus longue avec son activé pour chaque couleur doit être devinée par le joeur
+* __Vert__ : facile. De nouvelles séquence de 3 portes à ouvrir sont rajoutées sans modifier les précédents. Chaque porte est associée à un son.
 * __Bleu__ : moyen, idem que le mode vert mais sans les sons
-* __Jaune__: difficile. Dans ce mode la séquence de leds est à chaque fois réinitialisée au hasard, avec les sons activés.
+* __Jaune__: difficile. Dans ce mode, la séquence de portes à ouvrir est réinitialisée au hasard depuis le début, avec les sons activés.
 * __Rouge__: expert. Idem mode Jaune mais sans les sons.
 
 ![choix mode](_docs/Ecran_02_mode.png)
@@ -44,18 +48,16 @@ Le mode choisi est confirmé sur l'écran LCD
 ![confirmation](_docs/Ecran_03_modeChoisi.png)
 
 Le joueur est alors invité à :
-* observer la séquence de leds (avec ou sans son, selon le mode choisi) qui s'allument
+* observer la séquence de 3 portes (avec ou sans son, selon le mode choisi) à ouvrir, indiquée par notre guide
 * reproduire la même séquence à l'aide du rack de boutons poussoir
 
-S'il gagne: la led verte va clignoter 3 fois, le niveau est augmenté, et si le record du mode est battu il est aussi mis à jour.
+S'il gagne: la led verte va clignoter 3 fois, une clé est trouvée, et si le record du mode est battu il est aussi mis à jour.
 
 ![confirmation](_docs/Ecran_04_niveau.png)
 
-S'il se trompe: une musique de la loose est jouée, la led rouge clignote 3 fois, et un message est indiqué sur l'écran. 
-Le jeux retourne alors sur l'écran de choix du mode.
+S'il se trompe, vous êtes perdu dans le labyrinthe de la PybStick! Une musique de la loose est jouée, la led rouge clignote 3 fois, et un message est indiqué sur l'écran.  Le jeux retourne alors sur l'écran de choix du mode.
 
 ![loose](_docs/Ecran_05_loose.png)
-
 
 
 

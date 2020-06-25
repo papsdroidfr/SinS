@@ -121,6 +121,6 @@ class RackLeds:
         """ animation lorsqu'un tour est gagné"""
         self.leds[0].clignote(3)    #clignoter la led verte 3 fois
     
-    def lose(self):
+    def loose(self):
         """ animation lorsqu'un tour est perdu"""
         self.leds[3].clignote(3)    #clignoter la led rouge 3 fois

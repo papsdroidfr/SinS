@@ -174,8 +174,8 @@ class Jeux_sins():
                     self.lcd.msg_centre('Et non!')
                     for l in range(6,9):
                         self.lcd.write_char('robot_ko', pos=(l,1))
-                    self.buzzer.lose_sound()
-                    self.rackleds.lose()    # animation perdu
+                    self.buzzer.loose_sound()
+                    self.rackleds.loose()    # animation perdu
                     time.sleep(1)
                     continuer = False
 

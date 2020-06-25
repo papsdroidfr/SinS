@@ -68,7 +68,7 @@ class Buzz():
             sleep(0.1)
         self.mute()
 
-    def lose_sound(self):
+    def loose_sound(self):
         """ joue un accord de Lam7 à l'envers"""       
         for freq in self.freq_lam7[::-1]:
             self.chg_freq(freq)

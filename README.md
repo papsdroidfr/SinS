@@ -3,7 +3,7 @@ Jeux de mémoire visuelle et auditive à base d'une PYBStick26.
 
 Il faut retrouver les clés de 10 coffres à trésors cachés dans un immense labyrinthe.
 
-Dans chaque pièce où vous entrez, il y a 4 sorties de 4 couleurs distinctes. Vous avez un guide qui ouvre le chemin et vous montre les  3 prochaines portes à ouvrir pour trouver une première clé. Si vous réussissez, votre guide vous montre alors les 3 portes suivantes à ouvrir y compris les 3 premières déjà empruntées, et ainsi de suite... Le jeux se termine quand vous avez raporté les 10 clés, ou bien quand vous vous trompez et êtes perdu dans le labyrinthe.
+Dans chaque pièce où vous entrez, il y a 4 sorties de 4 couleurs distinctes. Vous avez un guide qui ouvre le chemin et vous montre les  3 prochaines portes à ouvrir pour trouver une première clé. Si vous réussissez, votre guide vous montre alors les 3 portes suivantes à ouvrir y compris les 3 premières déjà empruntées, et ainsi de suite... Le jeux se termine quand vous avez rapporté les 10 clés, ou bien quand vous vous trompez et êtes perdu dans le labyrinthe.
 
 ## matériel nécessaire
 * 1 PYBStick26

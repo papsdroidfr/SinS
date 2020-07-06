@@ -10,7 +10,7 @@ from leds import RackLeds
 from lcd import Lcd
 from buzzer import Buzz
 from buttons import RackButtons
-from random import randint
+from random import randint, seed
 import time, os
 
 class Jeux_sins():
@@ -42,14 +42,13 @@ class Jeux_sins():
 
         self.nb_portes=3              # nb de portes par niveau à ouvrir
         self.niveau = self.nb_portes  # nb de leds dans la séquence en cours
-        self.seq_led_droid = []   # sequence des couleurs à retenir
-        self.seq_led_joueur = []  # séquence des couleurs du joueur
-        self.continuer = True     # fin de partie: continuer=False
+        self.init_seq()               # initialise séquences
 
     def init_seq(self):
         """ réinitialise les séquences à vide"""
         self.seq_led_droid = []
         self.seq_led_joueur = []
+        seed(randint(0,32000))  #initialize random number generator
 
     def add_seq(self):
         """ ajoute une séquence de nb_portes aléatoires au jeux"""

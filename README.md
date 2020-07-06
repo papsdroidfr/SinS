@@ -1,18 +1,20 @@
 # SinS
-Jeux de mémoire visuelle et auditive à base d'une PYBStick26.
+Jeux de mémoire visuelle et auditive à base d'une PYBStick26: Sins Is Not Simon !
 
 Il faut retrouver les clés de 10 coffres à trésors cachés dans un immense labyrinthe.
 
 Dans chaque pièce où vous entrez, il y a 4 sorties de 4 couleurs distinctes. Vous avez un guide qui ouvre le chemin et vous montre les  3 prochaines portes à ouvrir pour trouver une première clé. Si vous réussissez, votre guide vous montre alors les 3 portes suivantes à ouvrir y compris les 3 premières déjà empruntées, et ainsi de suite... Le jeux se termine quand vous avez rapporté les 10 clés, ou bien quand vous vous trompez et êtes perdu dans le labyrinthe.
 
+Vous pouvez jouer à plusieurs pour trouver les 10 clés: organisez votre équipe pour retenir le bon ordre d'ouverture des portes.
+
 ## matériel nécessaire
 * 1 PYBStick26
 * 4 leds 5mm (Verte, Bleue, Jaune, Rouge)
 * 4 résistances 220 ohms (pour les leds)
-* 1 transistor npn (TO92)
-* 1 résistance 1k ohms (pour le transistor)
+* 1 réssitance 330 ohms (pour le buzzer), mais 220 ohms sera aussi valable.
+* 1 diode de redressement 1N4148 (optionel, le prototype fonctionne sans: diode de roue libre pour protéger le buzzer)
 * 1 petit buzzer passif
-* 4 petits boutons poussoir 6mm
+* 4 petits boutons poussoir (6mm pour une breadboard ou 12mm pour un circuit imprimé)
 * 1 écran LCD 1602 avec backpack I2C
 
 ## prototypage sur breadboard

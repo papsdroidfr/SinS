@@ -125,15 +125,19 @@ class Jeux_sins():
                 self.lcd.write_key(self.niveau//self.nb_portes, 0) # niveau
                 self.lcd.write_key(self.scores[self.mode], 1)      # record du mode joué
                 time.sleep(1)
+
                 #affichage de la séquence à trouver
-                for color in self.seq_led_droid:
+                for rang, color in enumerate(self.seq_led_droid):
                     self.rackleds.get_led(color).smooth_on()  # led allumée
                     if self.mode in ['V','J']:
                         self.buzzer.buzzId(color)       # son correspondant à la couleur uniquement pour les modes V et J
-                    time.sleep(0.5)                     # temps d'attente
+                    time.sleep(0.5)                     # temps d'attente en 2 leds
                     self.buzzer.mute()                  # buzzer mute
                     self.rackleds.get_led(color).smooth_off()  # led éteinte
                     time.sleep(0.5)                            # temps d'attente
+                    if (rang+1)%self.nb_portes == 0:     # attente supplémentaires entre 2 séries de nb_portes
+                        time.sleep(0.3)
+                        
                 #mémorisation séquence du joueur
                 #print('à toi de jouer')
                 self.rackbuttons.pressed = False

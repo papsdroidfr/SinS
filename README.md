@@ -11,11 +11,17 @@ Vous pouvez jouer à plusieurs pour trouver les 10 clés: organisez votre équip
 * 1 PYBStick26
 * 4 leds 5mm (Verte, Bleue, Jaune, Rouge)
 * 4 résistances 220 ohms (pour les leds)
-* 1 réssitance 330 ohms (pour le buzzer), mais 220 ohms sera aussi valable.
-* 1 diode de redressement 1N4148 (optionel, le prototype fonctionne sans: diode de roue libre pour protéger le buzzer)
+* 1 réssitance 330 ohms (pour le buzzer), sinon 220 ohms sera aussi valable.
+* 1 diode de redressement 1N4148 (optionel, le prototype fonctionne sans: c'est une diode de roue libre pour protéger le buzzer)
 * 1 petit buzzer passif
-* 4 petits boutons poussoir (6mm pour une breadboard ou 12mm pour un circuit imprimé)
+* 4 boutons poussoir (6mm pour une breadboard ou 12mm avec le circuit imprimé)
 * 1 écran LCD 1602 avec backpack I2C
+* 1 nappe souple femelle/femelle 4 pins, pour connecter le LCD au circuit.
+* 1 connecteur pin header coudé 4 pins mâles 2.54mm, pour relier le LCD (impéartivement coudé pour le circuit imprimé)
+* 1 diode Shotky SB560 (pour le circuit imprimé)
+* 1 connecteur Barrel JackDC 3 points Mâle (pour le circuit imprimé)
+* 2 pin header mâle 13 pins à souder (pour le circuit imprimé)
+* 1 circuit imprimé (optionnel, sinon une breadboard) à faire fabriquer à partir des fichier GERBER_SINS.zip fournis.
 
 ## prototypage sur breadboard
 

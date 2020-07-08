@@ -18,6 +18,7 @@ Vous pouvez jouer à plusieurs pour trouver les 10 clés: organisez votre équip
 * 1 écran LCD 1602 avec backpack I2C
 * 1 nappe souple femelle/femelle 4 pins, pour connecter le LCD au circuit.
 * 1 connecteur pin header coudé 4 pins mâles 2.54mm, pour relier le LCD (impéartivement coudé pour le circuit imprimé)
+
 Si vous comptez souder les composants sur le circuit imprimé proposé:
 * 1 circuit imprimé, à faire fabriquer à partir des fichier GERBER_SINS.zip fournis.
 * 1 alimentation 5V DC avec Jack femelle, 1A est suffisant 

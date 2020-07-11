@@ -1,5 +1,7 @@
 # SinS
-Jeux de mémoire visuelle et auditive à base d'une PYBStick26: Sins Is Not Simon !
+Dans le cadre du concours du #ChallengeDesMakers2020, notre équipe #OuiAreSins composée de François de https://www.framboise314.fr/, Frédéric de https://garatronic.fr/index.php/fr/, Dominique de https://shop.mchobby.be/fr/ et moi même Olivier de https://www.papsdroid.fr/ nous réalisons un jeux de mémoire visuelle et auditive à base d'une PYBStick26, mais ne vous y trompez pas:  Sins Is Not Simon !
+
+![carte PCB](_docs/20200711_154950.jpg)
 
 Il faut retrouver les clés de 10 coffres à trésors cachés dans un immense labyrinthe.
 
@@ -25,6 +27,15 @@ Si vous comptez souder les composants sur le circuit imprimé proposé:
 * 1 diode Shotky SB560 (elle protège l'alimentation externe 5V quand l'USB est connectée)
 * 1 connecteur Barrel JackDC mâle, 3 points de soudure
 * 2 pin header mâle 13 pins 2.54mm à souder (pour y connecter la PYBStick)
+* quelques entretoises M2.5 (ou M2 aussi ça passera): 8*M/F 15mm + 6 écrous + 2 vis
+
+Le lien avec le tutoriel de montage sera bientôt ajouté sur ce dépôt.
+
+## boîtier imprimé 3D 
+
+François nous a réalisé un boîtier sur mesure à imprimer en 3D, le lien avec les sources sera bientôt ajoutés à ce dépôt.
+
+![boiter3D](_docs/Sins3D_2.png)
 
 
 ## prototypage sur breadboard
@@ -74,6 +85,4 @@ S'il se trompe, vous êtes perdu dans le labyrinthe de la PybStick! Une musique 
 Si vous avez trouvé les 10 clés: bravo et respect !
 
 ![bravo](_docs/Ecran_06_BRAVO.png)
-
-
 

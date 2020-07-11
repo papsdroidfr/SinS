@@ -10,13 +10,13 @@ Dans chaque pièce où vous entrez, il y a 4 sorties de 4 couleurs distinctes. V
 Vous pouvez jouer à plusieurs pour trouver les 10 clés: organisez votre équipe pour retenir le bon ordre d'ouverture des portes.
 
 ## matériel nécessaire
-* 1 PYBStick26 avec ses deux barettes femelle 13pins soudées.
+* 1 PYBStick26 avec ses deux barettes femelles 13pins soudées.
 * 4 leds 5mm (Verte, Bleue, Jaune, Rouge)
 * 4 résistances 220 ohms (pour les leds)
 * 1 résistance 330 ohms (pour le buzzer), sinon 220 ohms sera aussi valable.
 * 1 diode de redressement 1N4148 (optionel, le prototype fonctionne sans: c'est une diode de roue libre pour protéger le buzzer)
 * 1 petit buzzer passif (attention à bien prendre un passif)
-* 4 boutons poussoir (6mm pour une breadboard, ou 12mm avec capuchons colorés ronds vert, bleu, jaune et rouge pour le circuit imprimé)
+* 4 boutons poussoirs (6mm pour une breadboard, ou 12mm avec capuchons colorés ronds vert, bleu, jaune et rouge pour le circuit imprimé)
 * 1 écran LCD 1602 avec backpack I2C
 * 1 nappe souple femelle/femelle 4 pins, pour connecter le LCD au circuit.
 * 1 connecteur pin header coudé 4 pins mâles 2.54mm, pour relier le LCD (impéartivement coudé pour le circuit imprimé)

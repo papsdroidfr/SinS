@@ -33,7 +33,8 @@ Le lien avec le tutoriel de montage sera bientôt ajouté sur ce dépôt.
 
 ## boîtier imprimé 3D 
 
-François nous a réalisé un boîtier sur mesure à imprimer en 3D, le lien avec les sources sera bientôt ajoutés à ce dépôt.
+François nous a réalisé un boîtier sur mesure à imprimer en 3D.
+Le [lien avec les sources](https://ouiaremakers.com/posts/tutoriel-diy-un-boitier-en-impression-3d-pour-le-projet-ouiaresins)
 
 ![boiter3D](_docs/Sins3D_2.png)
 

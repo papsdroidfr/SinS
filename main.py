@@ -1,7 +1,7 @@
 #################################################################
 #
 # Auteur : papsdroid - https://www.papsdroid.fr
-# Version: Juin 2020
+# Version: Août 2020
 # script MicoPython principal du jeux SinS sur PYBStick26
 #
 ################################################################"
@@ -11,7 +11,7 @@ from lcd import Lcd
 from buzzer import Buzz
 from buttons import RackButtons
 from random import randint, seed
-import time, os
+import time, os, utime
 
 class Jeux_sins():
     """ classe gestion du jeux  """
@@ -48,7 +48,10 @@ class Jeux_sins():
         """ réinitialise les séquences à vide"""
         self.seq_led_droid = []
         self.seq_led_joueur = []
-        seed(randint(0,32000))  #initialize random number generator
+        #seed(randint(0,32000))  #initialize random number generator
+        t=utime.localtime()         #format (y,m,d,h,m,s,ss,sss)
+        s = t[3]*3600+t[4]*60+t[5] # conversion hh:mn:ss en secondes
+        seed(s%2048)               # initialise table random non reproductibles 
 
     def add_seq(self):
         """ ajoute une séquence de nb_portes aléatoires au jeux"""
